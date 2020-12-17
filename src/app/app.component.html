@@ -1,1 +1,12 @@
-App works
+<div class="flex content-center min-h-screen">
+    <div class="container min-h-full">
+        <div class="flex justify-end" style="margin:10px; height: 80px">
+          <button class="btns" (click)="layout='list'">List Mode</button>
+          <button class="btns" (click)="layout='grid'">Grid Mode</button>
+        </div>
+        <div [ngClass]="{'list-layout': layout=='list','grid-layout': layout=='grid'}">
+          <app-product *ngFor="let product of products$ | async" [product]="product" [layout]="layout"></app-product>
+        </div>
+    </div>
+  </div>
+  
